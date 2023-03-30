@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About Us</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	.menu {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navigation-item {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  opacity: 0.6;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navigation-item:hover {
+  opacity: 0.9;
+}
+
+.navigation-item:active {
+  opacity: 0.8;
+}
+
+.navigation-item.w--current {
+  opacity: 1;
+  color: #1a1b1f;
+  font-weight: 600;
+}
+
+.navigation-item.w--current:hover {
+  opacity: 0.8;
+  color: #32343a;
+}
+
+.navigation-item.w--current:active {
+  opacity: 0.7;
+  color: #32343a;
+}
+
+.navigation-items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.navigation-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.text-block {
+  display: inline;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 50px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.logo-link {
+  z-index: 1;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.logo-link:active {
+  opacity: 0.7;
+}
+
+.button {
+  padding: 12px 25px;
+  border-radius: 0px;
+  background-color: #1a1b1f;
+  -webkit-transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+  transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #32343a;
+  color: #fff;
+}
+
+.button:active {
+  background-color: #43464d;
+}
+
+.button.cc-contact-us {
+  position: relative;
+  z-index: 5;
+  background-color: #3d54b0;
+}
+
+.team-circles {
+  position: relative;
+  padding: 80px 30px;
+  border-bottom: 1px solid #e4ebf3;
+  background-color: #4d69d7;
+  font-family: Bitter, serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+}
+
+.centered-heading {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.centered-subheading {
+  max-width: 530px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.team-grid {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 50px;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 64px;
+  grid-row-gap: 56px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+}
+
+.team-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.team-member-image {
+  width: 270px;
+  height: 270px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.team-member-name {
+  margin-bottom: 6px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.team-member-position {
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .team-member-image {
+    width: 270px;
+    height: 270px;
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .menu-button {
+    padding: 0px;
+  }
+
+  .menu-button.w--open {
+    background-color: transparent;
+  }
+
+  .menu {
+    position: static;
+    margin-left: 30px;
+  }
+
+  .navigation-item {
+    padding: 15px 30px;
+    -webkit-transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+    transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+    text-align: center;
+  }
+
+  .navigation-item:hover {
+    background-color: #f7f8f9;
+  }
+
+  .navigation-item:active {
+    background-color: #eef0f3;
+  }
+
+  .navigation-items {
+    background-color: #fff;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navigation-wrap {
+    background-color: #fff;
+  }
+
+  .navigation {
+    padding: 25px 30px;
+  }
+
+  .logo-link.w--current {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .button {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .button.cc-contact-us {
+    display: none;
+  }
+
+  .container {
+    max-width: 728px;
+  }
+
+  .team-grid {
+    grid-column-gap: 40px;
+  }
+
+  .team-member-image {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    padding: 20px 30px;
+  }
+
+  .logo-link {
+    padding-left: 0px;
+  }
+
+  .team-circles {
+    padding: 60px 15px;
+  }
+
+  .team-grid {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .menu-button {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .menu-button.w--open {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .menu {
+    margin-left: 15px;
+  }
+
+  .navigation {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .container {
+    max-width: none;
+  }
+
+  .centered-heading {
+    margin-bottom: 24px;
+  }
+
+  .team-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84fcb-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84fd6-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84fe0-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84fea-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84ff4-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+#w-node-_276cbe8a-07a4-126b-4a8e-745114d84ffe-155b3bd1 {
+  -ms-grid-column: span 1;
+  grid-column-start: span 1;
+  -ms-grid-column-span: 1;
+  grid-column-end: span 1;
+  -ms-grid-row: span 1;
+  grid-row-start: span 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: span 1;
+}
+
+@media screen and (min-width: 1440px) {
+  #w-node-_276cbe8a-07a4-126b-4a8e-745114d84fd6-155b3bd1 {
+    -ms-grid-column: span 1;
+    grid-column-start: span 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: span 1;
+    -ms-grid-row: span 1;
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+  }
+
+  #w-node-_276cbe8a-07a4-126b-4a8e-745114d84fe0-155b3bd1 {
+    -ms-grid-column: span 1;
+    grid-column-start: span 1;
+    -ms-grid-column-span: 1;
+    grid-column-end: span 1;
+    -ms-grid-row: span 1;
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+  }
+}
+	
+	</style>
+  </head>
+  
+<body>
+       
+
+
+  <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation w-nav">
+    <div class="navigation-wrap">
+      <a href="#" class="logo-link w-nav-brand"><img src="taytung.png" loading="lazy" width="115" alt=""></a>
+      <div class="menu">
+        <nav role="navigation" class="navigation-items w-nav-menu">
+          <a href="#" class="navigation-item w-nav-link">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="#" class="navigation-item w-nav-link">Art Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="#" class="navigation-item w-nav-link">Video Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="#" class="navigation-item w-nav-link">About Us</a>
+        </nav>
+        <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" alt="" class="menu-icon"></div>
+      </div>
+    </div>
+  </div>
+  <section class="team-circles wf-section">
+    <div class="container">
+      <h2 class="centered-heading">ABOUT US</h2>
+      <p class="centered-subheading">A bunch of 9th grade students doing web design :,) </p>
+      <div class="team-grid">
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84fcb-155b3bd1" class="team-card"><img src="reeney.jpg.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="reeney.jpg.jpg 500w, reeney.jpg.jpg 800w, reeney.jpg.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Reeney Napoles</div>
+          <div class="team-member-position">Reeney is one of the base coders of TIRAMISSYOU.</div>
+          <p>She was in charge of file management. She enjoys cosplaying and origami in her free time.</p>
+        </div>
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84fd6-155b3bd1" class="team-card"><img src="bianca.jpg.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="bianca.jpg.jpg 500w, bianca.jpg.jpg 800w, bianca.jpg.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Bianca Yap</div>
+          <div class="team-member-position">Bianca did hybrid work of both the CSS and HTML codes.</div>
+          <p>She mainly focuses on her hobbies, and less on her studies, but she gets by just fine.</p>
+        </div>
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84fe0-155b3bd1" class="team-card"><img src="yobbie.jpg.jpg loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="yobbie.jpg.jpg 500w, yobbie.jpg.jpg 800w, yobbie.jpg.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Yobbie Nueva</div>
+          <div class="team-member-position">Yobbie is one of the CSS coders of TIRAMISSYOU and was in charge of positioning.</div>
+          <p>He enjoys spending his personal time playing video games, also he can't get pass a day without spending.</p>
+        </div>
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84fea-155b3bd1" class="team-card"><img src="ern.jpg.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="ern.jpg.jpg 500w, ern.jpg.jpg 800w, ern.jpg.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Ern Baggay</div>
+          <div class="team-member-position">This ball of smiles is Ern. Ern is one of the CSS coders.</div>
+          <p>He excels at academics and sports. He enjoys playing basketball and chess. Ern is also a gamer who plays in his free time.</p>
+        </div>
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84ff4-155b3bd1" class="team-card"><img src="philip.jpg.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="philip.jpg.jpg 500w, philip.jpg.jpg 800w, philip.jpg.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Philip Saison</div>
+          <div class="team-member-position">Laidback as ever, Philip is our code debugger and a CSS designer.</div>
+          <p>He pursued web design because he found it fun, even if he believes he isn’t that good.</p>
+        </div>
+        <div id="w-node-_276cbe8a-07a4-126b-4a8e-745114d84ffe-155b3bd1" class="team-card"><img src="ahmed.jpg" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 189.99374389648438px, (max-width: 1439px) 27vw, 269.9999694824219px" srcset="ahmed.jpg 500w, ahmed.jpg 800w, ahmed.jpg 1080w" alt="" class="team-member-image">
+          <div class="team-member-name">Ahmed Noor</div>
+          <div class="team-member-position">Ahmed is one of the base coders of TIRAMISSYOU.</div>
+          <p>He likes playing basketball and travelling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</body>
+  
+  
+  
+</html>
